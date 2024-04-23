@@ -25,15 +25,10 @@ p{
 }
 
 main{
-  display: flex;
-  flex-wrap: wrap;            
-  justify-content: center;
   margin-top: 50px;
   padding: 25px;
-  display: flex;              
-  flex-wrap: wrap;            
-  justify-content: center;   /*legt element auf der Hauptachse in die Mitte*/
-  align-items: flex-start;    
+  display: flex;                    
+  justify-content: center;   /*legt element auf der Hauptachse in die Mitte*/   
 }
 
 /*MARK: HEADER---------------------------------*/
@@ -49,8 +44,7 @@ header{
 .logo-container{
   display: flex;
   align-items: center;
-  margin-left: 100px;
-  flex: 0.8;
+  margin-left: 75px;
 }
 
 .logo-container img{
@@ -92,13 +86,50 @@ header{
 
 .navigation a{
   padding: 0px 20px;
-  vertical-align: middle;
   color: white;
   font-family: var(--fontfamily);
   font-size: 16px;
   
 }
 
+
+.main-game{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 3px;
+  
+}
+
+
+/*MARK: CSS für index.html-----*/
+.game {          
+  flex-direction: column;
+  align-items: center;        
+  margin: 5px;               
+  border: #111 3px solid;
+  background-color: #111;
+  border-radius: var(--roundness);
+  box-shadow: 10px -10px 40px 1px #111;
+}
+
+.game:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+  
+}
+
+.game img {
+  height: auto;               
+  border-radius: var(--roundness);
+}
+
+.game p {
+  font-size: 18px;
+  margin-bottom: 8px;
+  margin-top: 3px;
+  margin-left: 4px;
+  font-family: var(--fontfamily);              
+}
 /*MARK: --CSS für Videos.html------*/
 .vid{
   margin-bottom: 20px;
@@ -110,15 +141,15 @@ header{
 
 .vid:hover{
   transform: scale(1.05);
-  transition: 0.3s;
+  transition: 0.2s;
   
 }
 .vid video{
-  border-radius: 15px;
+  border-radius: 15px; /*rundung Video-Vorschau*/
 }
 
  .vid h3{
-  margin-left: 5px;
+  margin-left: 7px;
   margin-bottom: 5px;
   margin-top: 3px;
   font-family: var(--fontfamily);
@@ -126,25 +157,9 @@ header{
   color: white;
  }
 
-
-
-
-
 /*MARK: Videoplayer von run-html*/
-.video{
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex: 1;
-  min-width: 80%;
-  justify-content: center;
-  
-}
-
-
 .video video{
   border-radius: 15px;
-  
 }
 
 .video h3{
@@ -164,7 +179,6 @@ header{
   margin-top: 50px;
 }
 
-
 .main-comment{
   display: grid;
 }
@@ -182,7 +196,6 @@ header{
   margin-bottom: 5px;
   border-radius: var(--roundness);
   border: 2px solid var(--light-blue); 
-  
 }
 
 .comment-box input:focus {      /**hebt box beim anklicken in farbe hervor**/
@@ -197,7 +210,6 @@ header{
   margin-bottom:10px;
   border-radius: var(--roundness);
   border: 2px solid var(--light-blue);
-  
 }
 
 .comment-box textarea:focus{
@@ -221,7 +233,6 @@ header{
 
 /*alle Kommentare*/
 .comment{
-  flex: 1;
   font-size: 15px;
   font-family: var(--fontfamily);
   margin-top: 30px;
@@ -231,43 +242,7 @@ header{
   box-shadow: 3px -3px 25px 1px #111;
 }
 
-.main-game{
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 3px;
-  
-}
 
-
-
-.game {          
-  flex-direction: column;
-  align-items: center;        
-  margin: 5px;               
-  border: #111 3px solid;
-  background-color: #111;
-  border-radius: var(--roundness);
-  box-shadow: 10px -10px 40px 1px #111;
-}
-
-.game:hover{
-  transform: scale(1.1);
-  transition: 0.3s;
-  
-}
-
-.game img {
-  height: auto;               /* Maintain aspect ratio */
-  border-radius: var(--roundness);
-}
-
-.game p {
-  font-size: 18px;
-  margin-bottom: 8px;
-  margin-top: 3px;
-  margin-left: 4px;
-  font-family: var(--fontfamily);              
-}
 
 /*MARK: -------------------Footer---------------------*/
 footer{
