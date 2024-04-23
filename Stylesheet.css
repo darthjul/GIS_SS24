@@ -1,0 +1,383 @@
+:root{
+  --roundness: 8px;
+  --fontfamily: Verdana, Geneva, Tahoma, sans-serif;
+  --light-blue: rgb(106, 192, 207);
+  --dark-blue: #23779e;
+}
+
+
+*{
+  font-family: Verdana, Tahoma, sans-serif;
+  font-weight: normal;
+  /*box-sizing: border-box;*/
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  background-color: rgb(41, 42, 44);
+}
+
+p{
+  color: white;
+}
+
+main{
+  display: flex;
+  flex-wrap: wrap;            
+  justify-content: center;
+  margin-top: 50px;
+  padding: 25px;
+  display: flex;              
+  flex-wrap: wrap;            
+  justify-content: center;   /*legt element auf der Hauptachse in die Mitte*/
+  align-items: flex-start;    
+}
+
+/*MARK: HEADER---------------------------------*/
+header{
+   flex-wrap: wrap;
+   display : flex;
+   align-items: center;
+   justify-content:space-between;
+   background-color: #111;
+  
+}
+
+.logo-container{
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  flex: 0.8;
+}
+
+.logo-container img{
+ width: 77px;
+ margin-right: 10px;
+ border-radius: 50%;
+}
+
+.logo-container h1{
+  min-width: max-content;
+  color: white;
+  font-family: var(--fontfamily);
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.logo-container h1 span{
+  font-weight: 200;
+}
+
+.navigation{
+  display: flex;
+  flex: 0.2;
+  align-items: center;
+}
+
+.navigation input{  /*Styling Searchbar*/
+  padding: 6px;
+  margin-right: 16px;
+  font-size: 17px;
+  border-radius: 5px;
+  
+}
+
+.navigation input:focus{
+  border: 3px solid var(--light-blue);
+  outline: 0;
+}
+
+.navigation a{
+  padding: 0px 20px;
+  vertical-align: middle;
+  color: white;
+  font-family: var(--fontfamily);
+  font-size: 16px;
+  
+}
+
+/*MARK: --CSS für Videos.html------*/
+.vid{
+  margin-bottom: 20px;
+  border: #111 1px solid;
+  background-color: #111;
+  border-radius: 15px;
+  box-shadow: 10px -10px 40px 1px #111;
+}
+
+.vid:hover{
+  transform: scale(1.05);
+  transition: 0.3s;
+  
+}
+.vid video{
+  border-radius: 15px;
+}
+
+ .vid h3{
+  margin-left: 5px;
+  margin-bottom: 5px;
+  margin-top: 3px;
+  font-family: var(--fontfamily);
+  font-size: 21px;
+  color: white;
+ }
+
+
+
+
+
+/*MARK: Videoplayer von run-html*/
+.video{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex: 1;
+  min-width: 80%;
+  justify-content: center;
+  
+}
+
+
+.video video{
+  border-radius: 15px;
+  
+}
+
+.video h3{
+  color: white;
+  font-size: 30px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  margin-top: 3px;
+  
+}
+/*MARK: Kommentare*/
+
+
+/*Eigener Kommentar*/
+.comment-box{
+  width: 500px;
+  margin-top: 50px;
+}
+
+
+.main-comment{
+  display: grid;
+}
+
+.comment-box h3{
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.comment-box input{
+  width: 100%;
+  height: 35px;
+  padding: 0px 20px;
+  margin-bottom: 5px;
+  border-radius: var(--roundness);
+  border: 2px solid var(--light-blue); 
+  
+}
+
+.comment-box input:focus {      /**hebt box beim anklicken in farbe hervor**/
+  border: 2px solid var(--dark-blue);
+  outline: 0;
+}
+
+.comment-box textarea{
+  width: 100%;
+  height: 100px;
+  padding:15px 20px;
+  margin-bottom:10px;
+  border-radius: var(--roundness);
+  border: 2px solid var(--light-blue);
+  
+}
+
+.comment-box textarea:focus{
+  border: 2px solid var(--dark-blue);
+  outline: 0;
+}
+
+.comment-box button{
+  border: 0;
+  padding: 10px 30px;
+  background: var(--light-blue);
+  font-size: 18px;
+  border-radius: var(--roundness);
+  color: white;
+  margin-bottom: 40px;
+}
+
+.comment-box button:hover {
+  background-color: var(--dark-blue);
+}
+
+/*alle Kommentare*/
+.comment{
+  flex: 1;
+  font-size: 15px;
+  font-family: var(--fontfamily);
+  margin-top: 30px;
+  border: rgb(106, 192, 207) solid 2px;
+  border-radius: var(--roundness);
+  padding: 10px;
+  box-shadow: 3px -3px 25px 1px #111;
+}
+
+.main-game{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 3px;
+  
+}
+
+
+
+.game {          
+  flex-direction: column;
+  align-items: center;        
+  margin: 5px;               
+  border: #111 3px solid;
+  background-color: #111;
+  border-radius: var(--roundness);
+  box-shadow: 10px -10px 40px 1px #111;
+}
+
+.game:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+  
+}
+
+.game img {
+  height: auto;               /* Maintain aspect ratio */
+  border-radius: var(--roundness);
+}
+
+.game p {
+  font-size: 18px;
+  margin-bottom: 8px;
+  margin-top: 3px;
+  margin-left: 4px;
+  font-family: var(--fontfamily);              
+}
+
+/*MARK: -------------------Footer---------------------*/
+footer{
+  background-color: #111;
+}
+
+.footerContainer{
+  padding: 70px 30px 20px
+}
+
+.socialIcons{
+  display:flex;
+  justify-content: center;    
+}
+
+.socialIcons a{
+  border: rgb(100, 204, 223) solid 3px;
+  text-decoration: none;
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.socialIcons a i{
+  font-size: 2em;
+  color: black;
+  opacity: o.9;
+}
+
+/*Hover Effekt*/
+.socialIcons a:hover{
+  background-color: #111;
+  transition: 0.5s;
+}
+
+.socialIcons a:hover i{
+  color: white;
+  transition: 0.5s;
+}
+
+.footerNav{
+  margin: 30px 0;
+}
+
+.footerNav ul{
+  display: flex;
+  justify-content: center;
+}
+
+.footerNav ul li a{
+  color: white;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 1.3em;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.footerNav ul li a:hover{
+  opacity: 1;
+}
+
+.footerBottom{
+  display: flex;
+  justify-content: center;
+}
+
+
+/*MARK: Media-------------------------------------------------------*/
+@media (max-width: 1000px){
+.video video{
+  width: 80%;
+}
+
+.logo-container {
+  flex: 1;
+  
+}
+
+.navigation{
+  flex: 1;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.logo-container{
+  justify-content: center;
+  right: 10%;
+  position: relative;
+}
+
+.main-game{
+  grid-template-columns: auto auto auto;
+}
+
+.vid{
+  width: 100%;
+}
+}
+
+
+@media (max-width: 700px){
+.main-game{
+  grid-template-columns: auto auto;
+}
+
+.comment-box{
+  width: 70%
+}
+
+}
