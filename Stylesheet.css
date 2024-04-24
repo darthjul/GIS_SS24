@@ -7,9 +7,8 @@
 
 
 *{
-  font-family: Verdana, Tahoma, sans-serif;
+  font-family: var(--fontfamily);
   font-weight: normal;
-  /*box-sizing: border-box;*/
   margin: 0;
   padding: 0;
   list-style: none;
@@ -27,24 +26,23 @@ p{
 main{
   margin-top: 50px;
   padding: 25px;
-  display: flex;                    
-  justify-content: center;   /*legt element auf der Hauptachse in die Mitte*/   
+  display: flex;                         
+  justify-content: center;   /*legt element auf der Hauptachse in die Mitte*/
 }
 
 /*MARK: HEADER---------------------------------*/
 header{
-   flex-wrap: wrap;
+   flex-wrap: wrap; /*schiebt Elemente untereinander*/
    display : flex;
    align-items: center;
-   justify-content:space-between;
+   justify-content:space-between; /*trennt logo und navigation voneinander*/
    background-color: #111;
-  
 }
 
 .logo-container{
   display: flex;
   align-items: center;
-  margin-left: 75px;
+  margin-left: 100px;
 }
 
 .logo-container img{
@@ -54,7 +52,6 @@ header{
 }
 
 .logo-container h1{
-  min-width: max-content;
   color: white;
   font-family: var(--fontfamily);
   font-size: 32px;
@@ -69,6 +66,7 @@ header{
   display: flex;
   flex: 0.2;
   align-items: center;
+  
 }
 
 .navigation input{  /*Styling Searchbar*/
@@ -89,10 +87,10 @@ header{
   color: white;
   font-family: var(--fontfamily);
   font-size: 16px;
-  
 }
 
 
+/*MARK: CSS für idex.html------*/
 .main-game{
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -100,8 +98,6 @@ header{
   
 }
 
-
-/*MARK: CSS für index.html-----*/
 .game {          
   flex-direction: column;
   align-items: center;        
@@ -119,7 +115,7 @@ header{
 }
 
 .game img {
-  height: auto;               
+  height: auto; /*wird an Inhalt angepasst*/       
   border-radius: var(--roundness);
 }
 
@@ -130,6 +126,7 @@ header{
   margin-left: 4px;
   font-family: var(--fontfamily);              
 }
+
 /*MARK: --CSS für Videos.html------*/
 .vid{
   margin-bottom: 20px;
@@ -145,7 +142,7 @@ header{
   
 }
 .vid video{
-  border-radius: 15px; /*rundung Video-Vorschau*/
+  border-radius: 15px;
 }
 
  .vid h3{
@@ -156,10 +153,10 @@ header{
   font-size: 21px;
   color: white;
  }
-
-/*MARK: Videoplayer von run-html*/
+/*MARK: Videoplayer von run.html*/
 .video video{
   border-radius: 15px;
+  
 }
 
 .video h3{
@@ -170,8 +167,8 @@ header{
   margin-top: 3px;
   
 }
-/*MARK: Kommentare*/
 
+/*MARK: Kommentare----------------*/
 
 /*Eigener Kommentar*/
 .comment-box{
@@ -179,8 +176,9 @@ header{
   margin-top: 50px;
 }
 
+
 .main-comment{
-  display: grid;
+  display: grid; /*ordnet Kommentare untereinander an*/
 }
 
 .comment-box h3{
@@ -196,9 +194,10 @@ header{
   margin-bottom: 5px;
   border-radius: var(--roundness);
   border: 2px solid var(--light-blue); 
+  
 }
 
-.comment-box input:focus {      /**hebt box beim anklicken in farbe hervor**/
+.comment-box input:focus {    /**hebt box beim anklicken in farbe hervor**/
   border: 2px solid var(--dark-blue);
   outline: 0;
 }
@@ -210,6 +209,7 @@ header{
   margin-bottom:10px;
   border-radius: var(--roundness);
   border: 2px solid var(--light-blue);
+  
 }
 
 .comment-box textarea:focus{
@@ -233,6 +233,7 @@ header{
 
 /*alle Kommentare*/
 .comment{
+  flex: 1;
   font-size: 15px;
   font-family: var(--fontfamily);
   margin-top: 30px;
@@ -270,7 +271,7 @@ footer{
 .socialIcons a i{
   font-size: 2em;
   color: black;
-  opacity: o.9;
+  opacity: 0.9;
 }
 
 /*Hover Effekt*/
@@ -333,7 +334,7 @@ footer{
 .logo-container{
   justify-content: center;
   right: 10%;
-  position: relative;
+  position: relative; /*verschiebt Box + schützt ursprünglichen Platz*/
 }
 
 .main-game{
