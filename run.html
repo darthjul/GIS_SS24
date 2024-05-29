@@ -5,6 +5,7 @@
         <link type="text/css" rel="stylesheet" href="Stylesheet.css">
         <style type="text/css"></style>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <script src="JavaScript.js" defer></script>
     </head>
     <body>
         <header>
@@ -28,49 +29,57 @@
                 </div>
             
             <!--Kommentarbereich-->
-            <div class="comment-box">
-                <h3>Comments</h3>
-                <form action="#">
-                    <input type="text" name="username" placeholder="username...">
-                    <textarea name="comment" placeholder="Your comment..."></textarea>
-                    <button type="submit">Send</button>
-            </div>
-        
+
+            <form>
+                <div class="comment-box">
+                    <h3>Your Comment</h3>
+                    <form action="#">
+                        <input id="username" type="text" name="username" placeholder="username...">
+                        <textarea id="comment" type="text" name="comment" placeholder="Your comment..."></textarea>
+                        <button type="submit">Send</button>
+                </div>
+            </form>
+            
+            <h1 id="commentTitle">Comments</h1>
+            <div id="data"></div>
+
+
+
             <!--alle Kommentare-->
             <div class="comment">
-                <p>User: User 1</p><br>
+                <p>Username: User 1</p><br>
                 <p>great run!</p>
             </div>
             <div class="comment">
-                <p>User: User 2</p><br>
+                <p>Username: User 2</p><br>
                 <p>good job</p>
             </div>
             <div class="comment">
-                <p>User: User 3</p><br>
+                <p>Username: User 3</p><br>
                 <p>how?</p>
             </div>
             <div class="comment">
-                <p>User: User 4</p><br>
+                <p>Username: User 4</p><br>
                 <p>thats insane</p>
             </div>
             <div class="comment">
-                <p>User: User 5</p><br>
+                <p>Username: User 5</p><br>
                 <p>great run</p>
             </div>
             <div class="comment">
-                <p>User: User 6</p><br>
+                <p>Username: User 6</p><br>
                 <p>great run</p>
             </div>
             <div class="comment">
-                <p>User: User 7</p><br>
+                <p>Username: User 7</p><br>
                 <p>great run</p>
             </div>
             <div class="comment">
-                <p>User: User 8</p><br>
+                <p>Username: User 8</p><br>
                 <p>great run</p>
             </div>
             <div class="comment">
-                <p>User: User 9</p><br>
+                <p>Username: User 9</p><br>
                 <p>great run</p>
             </div>
         </main>
@@ -91,5 +100,25 @@
                 </div>
             </div>
            </footer>
+
+
     </body>
+        <!--<script>
+            var storedItem = localStorage.getItem("storedItem");
+
+            function save(){
+                var Item = document.getElemetById("comment").innerHTML;
+                document.getElementById()
+                console.log(Item);
+                localStorage.setItem("storedItem"), Item;
+                document.getElementByID("svedText").innerHTML = localStorage.getItem("storedItem") + "SAVED";
+                console.log("save");
+
+            }
+            function get(){
+                localStorage.getItem("storedItem");
+                document.getElementById("openedText").innerHTML = Item + "OPENED";
+            }
+        </script>-->
+
 </html>

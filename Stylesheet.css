@@ -164,7 +164,7 @@ header{
   font-size: 30px;
   margin-left: 5px;
   margin-bottom: 5px;
-  margin-top: 3px;
+  margin-top: 10px;
   
 }
 
@@ -173,7 +173,7 @@ header{
 /*Eigener Kommentar*/
 .comment-box{
   width: 500px;
-  margin-top: 50px;
+  margin-top: 75px;
 }
 
 
@@ -182,7 +182,7 @@ header{
 }
 
 .comment-box h3{
-  font-size: 25px;
+  font-size: 30px;
   margin-bottom: 15px;
   color: white;
 }
@@ -230,6 +230,14 @@ header{
 .comment-box button:hover {
   background-color: var(--dark-blue);
 }
+
+#commentTitle {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: white;
+  margin-top: 50px;
+}
+
 
 /*alle Kommentare*/
 .comment{
