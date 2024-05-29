@@ -11,13 +11,13 @@ class CommentBox {
         this.div.appendChild(this.user);
         this.div.appendChild(this.br);
         this.div.appendChild(this.com);
-        main.appendChild(this.div);
+        main.appendChild(this.div);         //div wird mit user, br und com angelegt die in main zusammengefasst werden
     }
 }
 
 var storage;
-if (localStorage.getItem("form") != null) {
-    storage = localStorage.getItem("form");
+if (localStorage.getItem("form") != null) {      //wenn im localStorage bereits Eintrag mit Key "form" existiert wir dieser in storage gespeichert
+    storage = localStorage.getItem("form"); 
 }
 
 const form = document.querySelector('form');     //schaut ob Element des Typs form in document ist
@@ -25,20 +25,19 @@ const form = document.querySelector('form');     //schaut ob Element des Typs fo
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const fd = new FormData(form);              
-    const obj = Object.fromEntries(fd);
+    const obj = Object.fromEntries(fd);         
     console.log(obj);
 
     
     if(storage != null){
-        let comments = JSON.parse(localStorage.getItem("form"));    //wert von localStorage wird in Objekt geparst
+        let comments = JSON.parse(localStorage.getItem("form"));    //Wert von localStorage wird in Objekt geparst
         Object.assign(comments, {[obj.username]:obj.comment})       //neuer Kommentar wird hinzugefügt
-        localStorage.setItem("form", JSON.stringify(comments));
+        localStorage.setItem("form", JSON.stringify(comments));     //aktualisierte Objekt wird zurück in den localStorage als JSON-String gespeichert
     }
-    else {
-        let comments = {
-
-        }
-        Object.assign(comments, {[hilf]:obj.comment})
+    else {                                                          //Falls keine Kommentare im localStorage existieren,                                                    
+        let comments = {                                            //wird ein neues Objekt erstellt, der Kommentar hinzugefügt 
+        }                                                           //und im localStorage gespeichert
+        Object.assign(comments, {[obj.username]:obj.comment})
         localStorage.setItem("form", JSON.stringify(comments));
     }
 
