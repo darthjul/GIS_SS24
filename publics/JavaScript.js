@@ -99,12 +99,15 @@ form.addEventListener('submit', async (e) => {                              //re
             method: 'PUT',                                                  //Methode Put für Anfrage
             headers: {
               'Content-Type': 'application/json'
+              
             },
             body: JSON.stringify({name: obj.username, com: obj.comment})    //Konvertiert obj-Objekt in JSON String und sendet es an Anfrage
+
           });
+          console.log("data send");
     }
     catch{
-
+        
     }
     window.location.href = "run.html";                                      
 })
