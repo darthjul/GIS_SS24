@@ -176,7 +176,6 @@ header{
   margin-top: 75px;
 }
 
-
 .main-comment{
   display: grid; /*ordnet Kommentare untereinander an*/
 }
@@ -242,7 +241,7 @@ header{
 /*alle Kommentare*/
 .comment{
   flex: 1;
-  font-size: 15px;
+  font-size: 16px;
   font-family: var(--fontfamily);
   margin-top: 30px;
   border: rgb(106, 192, 207) solid 2px;
@@ -251,7 +250,20 @@ header{
   box-shadow: 3px -3px 25px 1px #111;
 }
 
+.delete-button{
+  border: 0;
+  padding: 8px 10px;
+  background: rgb(205, 14, 14);
+  font-size: 14px;
+  border-radius: var(--roundness);
+  color: white;
+  font-family: var(--fontfamily);
+  margin-top: 15px;
+}
 
+.delete-button:hover{
+  background-color:rgb(149, 18, 18)
+}
 
 /*MARK: -------------------Footer---------------------*/
 footer{
