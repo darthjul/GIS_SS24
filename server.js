@@ -15,9 +15,9 @@ const pool = mariadb.createPool({              // Verbindung zu MariaDB
 });
 
 app.use(express.json());                            //ermöglicht dem Server das Nutzen von JSON-Dateien
-app.use(express.static("public"));                  //bedient statische Dateien aus public
+app.use(express.static("publics"));                  //bedient statische Dateien aus public
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/public'));  //Expess sucht in public nach Templates
+app.set('views', path.join(__dirname, '/publics'));  //Expess sucht in public nach Templates
 
 app.get('',(req, res) => {                          //bei localhost Anfrage wird get Anfrage an Server geschicht
     res.render ('index')                            //index wird als Antwort gerendert
