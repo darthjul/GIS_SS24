@@ -16,37 +16,52 @@ class CommentBox {
 }
 
 var storage;
-if (localStorage.getItem("form") != null) {      //wenn im localStorage bereits Eintrag mit Key "form" existiert wir dieser in storage gespeichert
+/*if (localStorage.getItem("form") != null) {      //wenn im localStorage bereits Eintrag mit Key "form" existiert wir dieser in storage gespeichert
     storage = localStorage.getItem("form"); 
-}
+}*/
 
-const form = document.querySelector('form');     //schaut ob Element des Typs form in document ist
+const form = document.querySelector('form');                                //selektiert erstes Forular-Element
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const fd = new FormData(form);              
-    const obj = Object.fromEntries(fd);         
-    console.log(obj);
-
+form.addEventListener('submit', async (e) => {                              //reagiert auf Absenden des Kommentars
+    e.preventDefault();                                                     //verhindert neuladen
+    const fd = new FormData(form);                                          //sammelt Daten aus form (enthält username und comment)
+    const obj = Object.fromEntries(fd);                                     //wird in Objekt umgewandelt
+    console.log(JSON.stringify({name: obj.username, com: obj.comment}));
     
-    if(storage != null){
-        let comments = JSON.parse(localStorage.getItem("form"));    //Wert von localStorage wird in Objekt geparst
-        Object.assign(comments, {[obj.username]:obj.comment})       //neuer Kommentar wird hinzugefügt
-        localStorage.setItem("form", JSON.stringify(comments));     //aktualisierte Objekt wird zurück in den localStorage als JSON-String gespeichert
+    
+    try {
+        const response = await fetch(`/api/video/new_comment`, {           
+            method: 'PUT',                                                  //Methode Put für Anfrage
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({name: obj.username, com: obj.comment})    //Konvertiert obj-Objekt in JSON String und sendet es an Anfrage
+          });
     }
-    else {                                                          //Falls keine Kommentare im localStorage existieren,                                                    
-        let comments = {                                            //wird ein neues Objekt erstellt, der Kommentar hinzugefügt 
-        }                                                           //und im localStorage gespeichert
-        Object.assign(comments, {[obj.username]:obj.comment})
-        localStorage.setItem("form", JSON.stringify(comments));
-    }
+    catch{
 
-    window.location.href = "run.html";
+    }
+    window.location.href = "run.html";                                      
 })
 
-const json = localStorage.getItem('form');
-const obj = JSON.parse(json);
-console.log(obj);
-for (key in obj) {
-    let c = new CommentBox(key, obj[key], document.getElementById("data"));
+function getData(){
+    const fetchData = async () => {                                         //funktion mit name fetchData
+        try {
+            const response = await fetch(`/api/video/comments`);            //enthält alle Zeilen aus comments Tabelle aus Datenbank
+            const Data = await response.json();                             //await: multithreat nicht singlethreat
+            loadContent(Data);
+        }
+        catch {  
+        }
+    }
+
+    const loadContent = (data) => {
+        console.log(data);
+        data.forEach(item => {
+            console.log(item.username);
+            new CommentBox(item.username, item.comment, document.getElementById("data"));
+        }) 
+    }
+    fetchData();
 }
+getData();
